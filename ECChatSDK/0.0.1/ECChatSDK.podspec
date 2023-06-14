@@ -1,19 +1,23 @@
+Pod::Spec.new do |spec|
 
-Pod::Spec.new do |s|
-  s.name             = 'ECChatSDK'
-  s.version          = '0.0.1'
-  s.summary          = 'Bring chat to your project.'
-  s.description      = <<-DESC
-Bring chat to your project based on EdgeCenter services for iOS.
-                       DESC
+  spec.name         = "ECChatSDK"
+  spec.version      = "0.0.1"
+  spec.summary      = "Bring chat service to your project."
+  spec.description  = <<-DESC
+Bring chat service to your iOS project.
+                   DESC
 
-  s.homepage         = 'https://github.com/Edge-Center/vconf-chat-sdk-ios'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'MaksimMyakishev' => 'Maksim.myakishev@edgecenter.ru' }
-  s.source           = { :http => 'file:' + __dir__ + '/ECChatSDK.xcframework.zip' }
-  s.swift_version      = '5.3'
-  s.vendored_frameworks = "ECChatSDK.xcframework"
-  s.ios.deployment_target = '12.0'
-  s.requires_arc          = true
+  spec.homepage     = "https://github.com/Edge-Center/vconf-chat-sdk-ios"
+  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.author             = { "Maksim Myakishev" => "maksim.myakishev@edgecenter.ru" }
+  spec.platform     = :ios
+  spec.ios.deployment_target = "13.0"
+  spec.source       = { :git => "https://github.com/Edge-Center/vconf-chat-sdk-ios", :tag => "#{spec.version}" }
+  spec.swift_version      = '5.3'
+  spec.vendored_frameworks = "ECChatSDK.xcframework"
+  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
+  spec.exclude_files = "Classes/Exclude"
+  spec.requires_arc = true
+  spec.dependency "ParseSwift", "~> 4.14.2"
 
 end
